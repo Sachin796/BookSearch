@@ -27,9 +27,7 @@ class MainSearchPage extends Component {
     // console.log(apiData);
 
     const returnedData = await this.props.successAPICall(apiData);
-    // console.log(returnedData)
     if(returnedData.type === "SUCCESS_GET_BOOKS_CALL") {
-        // console.log("SUCCESS")
       this.props.history.push("/secondListingPage");
     }
   };

@@ -92,14 +92,13 @@ input[type='text']:focus {
 }
 
 .page3Div3{
-  background-color: greenyellow;
   color: white;
   padding: 1rem;
   height: 15rem;
 }
 
 .page3Div4{
-  background-color: dodgerblue;
+  background-color: rgb(10, 80, 150);
   color: white;
   padding: 1rem;
 }
@@ -188,3 +187,5 @@ cursor: pointer;
 .infoAuthor{
 
 }
+
+/* Page 4 CSS */

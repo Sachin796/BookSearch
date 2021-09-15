@@ -1,23 +1,28 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import { useHistory } from "react-router-dom";
 
 const BookListItem = (props) => {
 
- const handleClick= async (e)=>{
-    console.log(e.target.id)
+  let history = useHistory();
+
+  const handleClick= async (e)=>{
     const fetchedDescriptionData = await fetch(`https://openlibrary.org${e.target.id}.json`).then(res=>res.json()).then(data=>data);
-    console.log("FETCHED DESC DATA");
-    console.log(fetchedDescriptionData)
+    const returnedData = await props.apiCallSuccess(fetchedDescriptionData);
+    if(returnedData.type === "SUCCESS_DESCRIPTION_DATA_CALL")
+    {
+      history.push({pathname:"/thirdBookDetailPage",state:e.target.name})
+    }
   }
 
   return(
     <>
     <div class="info">
-      <span id={props.Key} onClick={(e)=>handleClick(e)} >
-        <img src={`${process.env.REACT_APP_COVERS_URL}/${props.cover_id}-M.jpg`} id={props.Key}/>
-        <h4 class="infoTitle" id={props.Key}>Title: {props.title}</h4>
-        <h4 class="infoAuthor" id={props.Key}>Author: {props.author}</h4>
-        <h4 class="infoPbYear" id={props.Key}>First Published Year: {props.pbyear}</h4>
+      <span id={props.Key} onClick={(e)=>handleClick(e)} name={props.cover_id} >
+        <img src={`${process.env.REACT_APP_COVERS_URL}/${props.cover_id}-M.jpg`} id={props.Key} name={props.cover_id}/>
+        <h4 class="infoTitle" id={props.Key} name={props.cover_id}>Title: {props.title}</h4>
+        <h4 class="infoAuthor" id={props.Key} name={props.cover_id}>Author: {props.author}</h4>
+        <h4 class="infoPbYear" id={props.Key} name={props.cover_id}>First Published Year: {props.pbyear}</h4>
       </span>
     </div>
     </>
@@ -35,7 +40,7 @@ const mapStateToProps = state => {
   
   const mapDispatchToProps = dispatch => {
   return {
-    successAPICall: (data) => dispatch({ type: 'SUCCESS_GET_BOOKS_CALL', payload: data})
+    apiCallSuccess: (data) => dispatch({ type: 'SUCCESS_DESCRIPTION_DATA_CALL', payload: data})
   };
   };
 
