@@ -13,14 +13,12 @@ import {
 function App() {
   return (
     <div className="App">
-        <header>
-      </header>
-      <body>
+
       
-      <div>
+      {/* <div> */}
         <Router>
-      <div>
-        <nav>
+      {/* <div> */}
+        {/* <nav>
           <ul>
             <li>
               <Link to="/">MainPage</Link>
@@ -32,7 +30,7 @@ function App() {
               <Link to="/thirdBookDetailPage">ThirdBookDetailPage</Link>
             </li>
           </ul>
-        </nav>
+        </nav> */}
 
         <Switch>
           <Route exact path="/">
@@ -45,10 +43,10 @@ function App() {
             <ThirdBookDetailPage />
           </Route>
         </Switch>
-      </div>
+      {/* </div> */}
     </Router>
-        </div>
-      </body>
+        {/* </div> */}
+
     </div>
   );
 }
