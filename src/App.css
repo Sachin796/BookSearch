@@ -167,7 +167,7 @@ input[type='text']:focus {
   .secondPageContent { display: inline;background-color: rgb(211, 210, 210); }    
 }
 
-#info{
+.info{
   background-color: #ffffff;
   width: 65%;
   margin: auto;
@@ -181,10 +181,10 @@ input[type='text']:focus {
   z-index: 100;
 } */
 
-#infoTitle{
+.infoTitle{
 cursor: pointer;
 }
 
-#infoAuthor{
+.infoAuthor{
 
 }

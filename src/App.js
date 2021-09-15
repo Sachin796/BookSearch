@@ -1,4 +1,5 @@
 import './App.css';
+
 import MainSearchPage from './containers/MainSearchPage';
 import SecondListingPage from './containers/SecondListingPage';
 import ThirdBookDetailPage from './containers/ThirdBookDetailPage';
@@ -13,25 +14,7 @@ import {
 function App() {
   return (
     <div className="App">
-
-      
-      {/* <div> */}
         <Router>
-      {/* <div> */}
-        {/* <nav>
-          <ul>
-            <li>
-              <Link to="/">MainPage</Link>
-            </li>
-            <li>
-              <Link to="/secondListingPage">SecondListingPage</Link>
-            </li>
-            <li>
-              <Link to="/thirdBookDetailPage">ThirdBookDetailPage</Link>
-            </li>
-          </ul>
-        </nav> */}
-
         <Switch>
           <Route exact path="/">
             <MainSearchPage />
@@ -43,10 +26,7 @@ function App() {
             <ThirdBookDetailPage />
           </Route>
         </Switch>
-      {/* </div> */}
     </Router>
-        {/* </div> */}
-
     </div>
   );
 }

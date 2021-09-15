@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import bookStoreReducer from '../src/reducer/book';
+require('dotenv').config()
 
 const store = createStore(bookStoreReducer);
 ReactDOM.render(

@@ -30,10 +30,7 @@ class MainSearchPage extends Component {
     // console.log(returnedData)
     if(returnedData.type === "SUCCESS_GET_BOOKS_CALL") {
         // console.log("SUCCESS")
-      this.props.history.push({
-            pathname:"/secondListingPage",
-            state: {data: returnedData.payload}
-        });
+      this.props.history.push("/secondListingPage");
     }
   };
 

@@ -20,9 +20,9 @@ class DisplaySection extends Component{
             {Object.keys(this.props.data).map((key) => {
         return (
           <>
-          {this.props.data[key]["author_name"] !== undefined?
+          {(this.props.data[key]["author_name"] !== undefined && this.props.data[key]["cover_edition_key"] !== undefined && this.props.data[key]["key"] !== undefined && this.props.data[key]["cover_i"] !== undefined && this.props.data[key]["first_publish_year"] !== undefined)?
           (
-            <BookListItem title={this.props.data[key].title} author={this.props.data[key]["author_name"][0]}/>
+            <BookListItem title={this.props.data[key].title} author={this.props.data[key]["author_name"][0]} cek={this.props.data[key]["cover_edition_key"]} Key={this.props.data[key]["key"]} cover_id={this.props.data[key]["cover_i"]} pbyear={this.props.data[key]["first_publish_year"]}/>
           )
           :null}
         </>
