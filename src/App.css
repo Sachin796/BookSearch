@@ -133,3 +133,58 @@ input[type='text']:focus {
 #mainPageInput{
   
 }
+
+/* SECOND PAGE CSS */
+.secondPageContent{
+  max-width: 100%;
+  margin: 0 auto;
+  display: grid;
+  background-color: rgb(211, 210, 210);
+}
+
+.sortsection{
+/* background-color: aquamarine; */
+/* border-right: 1px solid black ; */
+}
+
+.displaysection{
+
+}
+
+@media (min-width: 900px) {
+  .secondPageContent { grid-template-columns: 30% 70%; }
+  .sortsection{
+    border-right: 2.5px solid white ;
+    }
+    
+}
+
+@media (max-width:900px) and (min-width: 600px) {
+  .secondPageContent { display: inline;background-color: rgb(211, 210, 210); }    
+}
+
+@media (max-width:600px) and (min-width: 0px) {
+  .secondPageContent { display: inline;background-color: rgb(211, 210, 210); }    
+}
+
+#info{
+  background-color: #ffffff;
+  width: 65%;
+  margin: auto;
+  box-shadow:1px 1px 1px black;
+}
+
+/* .infoTitle:hover{
+
+  margin: 20px auto;
+  transition: 500ms linear;
+  z-index: 100;
+} */
+
+#infoTitle{
+cursor: pointer;
+}
+
+#infoAuthor{
+
+}

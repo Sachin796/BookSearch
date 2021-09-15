@@ -2,36 +2,28 @@ import React, { useState,useEffect } from 'react';
 import { connect } from 'react-redux';
 import Header from '../../components/Header'
 // component
-import BookListItem from '../../components/BookListItem';
+import DisplaySection from "./displaySection";
+import FilterSection from "./filterSection"
 
 const SecondListingPage = (props) => {
-
-
   return(
     <div>
-      <Header />           
-      <h1>SecondListingPage</h1>
-      {/* {console.log("Props data is")}
-      {console.log(Object.keys(props.data))} */}
-      {Object.keys(props.data).map((key) => {
-        return (
-          <>
-          {props.data[key]["author_name"] !== undefined?
-          (
-            <BookListItem title={props.data[key].title} author={props.data[key]["author_name"][0]}/>
-          )
-          :null}
-        </>
-        );
-      })}
+      <Header />
+      <div className="secondPageContent">
+        <div className="sortsection">
+        <FilterSection />  
+        </div>
+        <div className = "displaysection">        
+        <DisplaySection />      
+        </div>
+      </div>          
     </div>
   );
 };
 
 const mapStateToProps = state => {
-
-  console.log("STATE INSIDE MAPSTATE TO PROPS")
-  console.log(state.docs[0][10])
+  // console.log("STATE INSIDE MAPSTATE TO PROPS")
+  // console.log(state.docs[0][10])
 return {
   author: state.author,
   data: state.docs[0]
