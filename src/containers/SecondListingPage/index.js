@@ -1,5 +1,6 @@
 import React, { useState,useEffect } from 'react';
 import { connect } from 'react-redux';
+import Header from '../../components/Header'
 // component
 import BookListItem from '../../components/BookListItem';
 
@@ -8,10 +9,10 @@ const SecondListingPage = (props) => {
 
   return(
     <div>
+      <Header />           
       <h1>SecondListingPage</h1>
       {/* {console.log("Props data is")}
       {console.log(Object.keys(props.data))} */}
-
       {Object.keys(props.data).map((key) => {
         return (
           <>
@@ -30,7 +31,7 @@ const SecondListingPage = (props) => {
 const mapStateToProps = state => {
 
   console.log("STATE INSIDE MAPSTATE TO PROPS")
-  // console.log(state.docs[0][0].author_name[0])
+  console.log(state.docs[0][10])
 return {
   author: state.author,
   data: state.docs[0]

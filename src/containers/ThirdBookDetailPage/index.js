@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
+import Header from '../../components/Header'
 
 const ThirdBookDetailPage = () => {
   return(
     <>
-  <div className="page3Main">
-    <div className="page3Div1">Div1</div>
-    <div className="page3Div2">Div2</div>
-  </div>
+  <Header />
   <div>
     <div className="page3Main2">
       <div className="page3Div3">Div3</div>

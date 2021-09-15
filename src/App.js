@@ -1,6 +1,5 @@
 import './App.css';
-// import MainSearchPage from './containers/MainSearchPage';
-import MainSearchPage from './containers/MainSearchPage/index2';
+import MainSearchPage from './containers/MainSearchPage';
 import SecondListingPage from './containers/SecondListingPage';
 import ThirdBookDetailPage from './containers/ThirdBookDetailPage';
 import React from 'react'

@@ -8,6 +8,9 @@ class MainSearchPage extends Component {
     this.state = {
       bookName:'',
     };
+
+    this.onFindButtonClick = this.onFindButtonClick.bind(this);
+    this.onBookNameChange = this.onBookNameChange.bind(this);
   }
 
   onBookNameChange = (e) => {
@@ -36,18 +39,18 @@ class MainSearchPage extends Component {
 
   render(){
     return(
-      <div>
+        <div className="mainDivmainPage">
+        <div id = "appName">
+          <span >Application Name</span>
+        </div>
+        
         <div>
-        <h1>Application Name: {this.props.author}</h1>
-      </div>
-
-      <div>
-        <input type='text' name='bookName' value={this.state.bookName} onChange={this.onBookNameChange} />
-      </div>
-
-      <div>
-        <button type='button' onClick = {this.onFindButtonClick}>Find Book</button>
-      </div>
+          <input type='text' aria-label="Search Book" aria-required="true" id="mainPageInput" name='bookName' value={this.state.bookName} onChange={this.onBookNameChange} />
+        </div>
+  
+        <div>
+          <button type='button' className="mainPageSearchButton" onClick = {this.onFindButtonClick}>Find Book</button>
+        </div>
       </div>
     ); 
   }
