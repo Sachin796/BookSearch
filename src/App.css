@@ -149,6 +149,31 @@ input[type='text']:focus {
   background-color: rgb(211, 210, 210);
 }
 
+#maingrid{
+  max-width: 100%;
+  margin: 0 auto;
+  display: grid;
+}
+
+#filterTitle{
+  /* padding: 0.05rem; */
+  border: 0.5px solid black;
+  width: 73%;
+  margin: auto;
+  margin-top: 0.5rem;
+  background-color: #ffffff;
+  font-weight: bolder;
+}
+
+#subgrid1{
+margin-top: 1rem;
+}
+
+#subgrid2{
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
 .sortsection{
 /* background-color: aquamarine; */
 /* border-right: 1px solid black ; */
@@ -194,11 +219,11 @@ input[type='text']:focus {
 
 @media (max-width: 700px) {
   #bookmain { display: inline-block; }
-  .secondPageContent{ background-color: rgb(211, 210, 210); }
+  .secondPageContent{ min-height: 10vh; background-color: rgb(211, 210, 210); }
 }
 
 @media (min-width: 900px) {
-  .secondPageContent { grid-template-columns: 30% 70%; }
+  .secondPageContent { grid-template-columns: 30% 70%;min-height: 86.5vh; }
   .sortsection{
     border-right: 2.5px solid white ;
     }  
@@ -208,10 +233,16 @@ input[type='text']:focus {
   .secondPageContent { display: inline-block }
   .sortsection{background-color: rgb(211, 210, 210);margin: 0px !important;}
   .displaysection{background-color: rgb(211, 210, 210);margin: 0px;}    
+  #maingrid{
+    grid-template-columns: 50% 50%
+  }
 }
 
 @media (max-width:600px) and (min-width: 0px) {
   .secondPageContent { display: inline-block;background-color: rgb(211, 210, 210); }    
+  #maingrid{
+    grid-template-columns: 50% 50%
+  }
 }
 
 .info{

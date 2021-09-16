@@ -17,33 +17,37 @@ function FilterSection(props){
     }
     return(
  <div>
-     {console.log(props)}
-      <p>Filter</p>
+     <div id="filterTitle">
+        <p>Filter</p>
+     </div>
       <form>
-        {/* <label name='author'>Author</label> */}
-        {/* <select name='author' onChange={props.handleChange}> */}
-        {/* <select name='author'>
-          <option value=''>None</option>
-          <option value='J.K. Rowling'>J.K. Rowling</option>
-        </select> */}
-
-        <label name='tags'>Editions</label>
-        <select name='tags' onChange={handleEditionChange}>
-            <option value="SELECT"> --- SELECT ---</option>
-            {props.uniqueEditions.map(ele=>{
-                return <option value={ele}>{ele}</option>
-            })}
-        </select>
-
-        <label name='year'>Year Published</label>
-        <select name='year' onChange={handleYearChange}>
-            <option value="SELECT">---SELECT---</option>
-            {props.uniqueYearPublished.map(ele=>{
-                return <option value={ele}>{ele}</option>
-            })}
-        </select>
-      </form>
-    </div>
+         <div id="maingrid"> 
+            <div id="subgrid1">        
+                <p>
+                <label htmlFor="tags" name='tags' style={{fontSize:"large",fontWeight:"bolder"}}>Editions</label>
+                </p>
+                <select name='tags' style={{width:"150px"}} onChange={handleEditionChange}>
+                    <option value="SELECT"> SELECT </option>
+                    {props.uniqueEditions.map(ele=>{
+                    return <option value={ele}>{ele}</option>
+                })}
+                </select>
+            </div>    
+   
+        <div id="subgrid2">
+            <p>
+            <label htmlFor="year" name='year' style={{fontSize:"large",fontWeight:"bolder"}}>Year Published</label>
+            </p>
+            <select name='year' style={{width:"150px"}} onChange={handleYearChange}>
+                <option value="SELECT">SELECT</option>
+                {props.uniqueYearPublished.map(ele=>{
+                    return <option value={ele}>{ele}</option>
+                })}
+            </select>
+        </div>
+      </div>
+    </form>
+</div>
     )
 
 }

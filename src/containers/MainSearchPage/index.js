@@ -36,7 +36,7 @@ class MainSearchPage extends Component {
     return(
         <div className="mainDivmainPage">
         <div id = "appName">
-          <span >Book Finder</span>
+          <span id="booktitle">Book Finder</span>
         </div>
         <div>
           <input type='text' aria-label="Search Book" aria-required="true" id="mainPageInput" name='bookName' placeholder="Search Here" value={this.state.bookName} onChange={this.onBookNameChange} />
@@ -61,4 +61,6 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
+
+export {MainSearchPage as MainSearchPageComponent}
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(MainSearchPage));
