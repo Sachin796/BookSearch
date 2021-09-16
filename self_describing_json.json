@@ -1,0 +1,18 @@
+{
+    "self": {
+        "vendor": "com.sachinjhaveri",
+        "name": "Sachin Jhaveri",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "type": "object",
+    "properties": {
+        "bannerId": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "bannerId"
+    ],
+    "additionalProperties": false
+}

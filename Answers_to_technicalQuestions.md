@@ -26,3 +26,6 @@ b.	If you didn't spend much time on the coding test, then use this as an opportu
 
 4.	How would you improve the API that you just used?
 -  One of the thing that was missing in the API was the response code/status. It was a challanging part in the frontend without using that. Also the overall structure of the API endpoints can be changed as many Endpoints gave unstructured data.
+ 
+5. Self describing JSON
+   File attached.
