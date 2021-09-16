@@ -26,6 +26,7 @@ class MainSearchPage extends Component {
     await this.props.successAPICall(apiData);
     if(apiData.num_found === 0) {
       // TODO Popup or Change to a new page.
+      alert("No Data Found... Try again")
       console.log("Equal")
     }else{
       this.props.history.push("/secondListingPage");
