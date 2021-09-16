@@ -32,10 +32,17 @@ class DisplaySection extends Component{
 }
 
 const mapStateToProps = state => {
+  let newstate;
+  if(state.filteredData !== null){
+    newstate = state.filteredData
+  }
+  else if(state.filteredData === null){
+    newstate = state.docs
+  }
   return {
-    author: state.author,
-    data: state.docs[0],
-    count: state.data_count
+    author: newstate.author,
+    data: newstate[0],
+    count: newstate.data_count
   };
   };
   
