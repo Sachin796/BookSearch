@@ -2,7 +2,9 @@ import '../../App.css'
 
 function FilterSection(){
     return(
-        <h4>Filter Section contents here</h4>
+        <p>
+            <span>Filter Section contents here</span>
+        </p>
     )
 
 }

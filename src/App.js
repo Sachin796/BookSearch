@@ -1,5 +1,4 @@
 import './App.css';
-
 import MainSearchPage from './containers/MainSearchPage';
 import SecondListingPage from './containers/SecondListingPage';
 import ThirdBookDetailPage from './containers/ThirdBookDetailPage';
@@ -8,7 +7,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 
 function App() {

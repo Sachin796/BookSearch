@@ -1,6 +1,6 @@
 import '../../App.css'
 import AppName from './appName'
-import Searchandbutton from './searchandbutton'
+// import Searchandbutton from './searchandbutton'
 function Header(){
 
 return(

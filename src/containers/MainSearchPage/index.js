@@ -23,8 +23,9 @@ class MainSearchPage extends Component {
     const apiData = await fetch(`https://openlibrary.org/search.json?q=${formattedData}`)
       .then(response => response.json())
       .then(data => data);
-      const returnedData = await this.props.successAPICall(apiData);
+    await this.props.successAPICall(apiData);
     if(apiData.num_found === 0) {
+      // TODO Popup or Change to a new page.
       console.log("Equal")
     }else{
       this.props.history.push("/secondListingPage");
