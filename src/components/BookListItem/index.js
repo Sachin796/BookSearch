@@ -16,16 +16,22 @@ const BookListItem = (props) => {
   }
 
   return(
-    <>
+  <>
     <div class="info">
       <span id={props.Key} onClick={(e)=>handleClick(e)} name={props.cover_id} >
-        <img src={`${process.env.REACT_APP_COVERS_URL}/${props.cover_id}-M.jpg`} id={props.Key} name={props.cover_id}/>
-        <h4 class="infoTitle" id={props.Key} name={props.cover_id}>Title: {props.title}</h4>
-        <h4 class="infoAuthor" id={props.Key} name={props.cover_id}>Author: {props.author}</h4>
-        <h4 class="infoPbYear" id={props.Key} name={props.cover_id}>First Published Year: {props.pbyear}</h4>
+       <div id="bookmain">
+          <div id="bookcover">
+          <img src={`${process.env.REACT_APP_COVERS_URL}/${props.cover_id}-M.jpg`} id={props.Key} name={props.cover_id} alt="Book Cover"/>
+          </div>
+          <div id="bookdetails">
+          <h4 class="infoTitle" id={props.Key} name={props.cover_id}>Title: {props.title}</h4>
+          <h4 class="infoAuthor" id={props.Key} name={props.cover_id}>Author: {props.author}</h4>
+          <h4 class="infoPbYear" id={props.Key} name={props.cover_id}>First Published Year: {props.pbyear}</h4>
+          </div>
+        </div>
       </span>
     </div>
-    </>
+  </>
   );
 };
 

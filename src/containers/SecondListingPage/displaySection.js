@@ -14,7 +14,6 @@ class DisplaySection extends Component{
         return(
             <>
             <SortSection />
-                 <h1>SecondListingPage</h1>
             {console.log("Inside Display Section")}
             {console.log(this.props)}
             {Object.keys(this.props.data).map((key) => {
@@ -34,9 +33,11 @@ class DisplaySection extends Component{
 }
 
 const mapStateToProps = state => {
+  console.log(state)
   return {
     author: state.author,
-    data: state.docs[0]
+    data: state.docs[0],
+    count: state.data_count
   };
   };
   

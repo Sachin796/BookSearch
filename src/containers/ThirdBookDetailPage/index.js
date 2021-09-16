@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Header from '../../components/Header'
 import { connect } from 'react-redux';
 import { useHistory } from "react-router-dom";
@@ -15,7 +15,23 @@ const ThirdBookDetailPage = (props) => {
       <div className="page3Div3">
       <img src={`${process.env.REACT_APP_COVERS_URL}/${history.location.state}-L.jpg`} style={{width:"90%",height:"80%",objectFit:"contain"}} alt="Book Cover" />
       </div>
-      <div className="page3Div4">Div4</div>
+      <div className="page3Div4">
+        <div id="bookTitle">{props.data.title}</div>
+        <p id="revision">Latest Revision - {props.data.revision}</p>
+
+        <div id="description">
+        <p>DESCRIPTION</p>
+        <p id="descriptionSection">{props.data.description != undefined?props.data.description.value:"No Data"}</p>
+        </div>
+
+        <div id="referenceLinks">
+          <p>REFERENCES</p>
+          {props.data.links != undefined?props.data.links.map(data=>{
+            return <p>{data.title} - {data.url}</p>
+          }):"No Data"}
+        </div>
+
+      </div>
     </div>
   </div>
 </>
