@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { useHistory } from "react-router-dom";
-
+import { types } from '../../actions/types';
 const BookListItem = (props) => {
 
   let history = useHistory();
@@ -9,24 +9,25 @@ const BookListItem = (props) => {
   const handleClick= async (e)=>{
     const fetchedDescriptionData = await fetch(`https://openlibrary.org${e.target.id}.json`).then(res=>res.json()).then(data=>data);
     const returnedData = await props.apiCallSuccess(fetchedDescriptionData);
-    if(returnedData.type === "SUCCESS_DESCRIPTION_DATA_CALL")
+    if(returnedData.type === types.GET_DESCRIPTION)
     {
-      history.push({pathname:"/thirdBookDetailPage",state:e.target.name})
+      history.push({pathname:"/thirdBookDetailPage",state:e.target.getAttribute('name')})
     }
   }
 
   return(
   <>
-    <div class="info">
+    <div className="info">
       <span id={props.Key} onClick={(e)=>handleClick(e)} name={props.cover_id} >
        <div id="bookmain">
           <div id="bookcover">
           <img src={`${process.env.REACT_APP_COVERS_URL}/${props.cover_id}-M.jpg`} id={props.Key} name={props.cover_id} alt="Book Cover"/>
           </div>
           <div id="bookdetails">
-          <h4 class="infoTitle" id={props.Key} name={props.cover_id}>Title: {props.title}</h4>
-          <h4 class="infoAuthor" id={props.Key} name={props.cover_id}>Author: {props.author}</h4>
-          <h4 class="infoPbYear" id={props.Key} name={props.cover_id}>First Published Year: {props.pbyear}</h4>
+          <h4 className="infoTitle" id={props.Key} name={props.cover_id}>Title: {props.title}</h4>
+          <h4 className="infoAuthor" id={props.Key} name={props.cover_id}>Author: {props.author}</h4>
+          <h4 className="infoPbYear" id={props.Key} name={props.cover_id}>First Published Year: {props.pbyear}</h4>
+          <h4 className="infoEditions" id={props.Key} name={props.cover_id}>Number of Editions: {props.editionCount}</h4>
           </div>
         </div>
       </span>
@@ -36,8 +37,6 @@ const BookListItem = (props) => {
 };
 
 const mapStateToProps = state => {
-  console.log("STATE INSIDE BOOKLIST ITEM");
-  console.log(state)
   return {
     // author: state.author,
     // data: state.docs[0]
@@ -46,7 +45,7 @@ const mapStateToProps = state => {
   
   const mapDispatchToProps = dispatch => {
   return {
-    apiCallSuccess: (data) => dispatch({ type: 'SUCCESS_DESCRIPTION_DATA_CALL', payload: data})
+    apiCallSuccess: (data) => dispatch({ type: types.GET_DESCRIPTION, payload: data})
   };
   };
 

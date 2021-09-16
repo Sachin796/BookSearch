@@ -1,9 +1,9 @@
-import React, { useState,useEffect } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import Header from '../../components/Header'
-// component
 import DisplaySection from "./displaySection";
 import FilterSection from "./filterSection"
+import { types } from '../../actions/types';
 
 const SecondListingPage = (props) => {
   return(
@@ -22,8 +22,6 @@ const SecondListingPage = (props) => {
 };
 
 const mapStateToProps = state => {
-  // console.log("STATE INSIDE MAPSTATE TO PROPS")
-  // console.log(state.docs[0][10])
 return {
   author: state.author,
   data: state.docs[0]
@@ -32,7 +30,7 @@ return {
 
 const mapDispatchToProps = dispatch => {
 return {
-  successAPICall: (data) => dispatch({ type: 'SUCCESS_GET_BOOKS_CALL', payload: data})
+  successAPICall: (data) => dispatch({ type: types.GET_BOOKS, payload: data})
 };
 };
 

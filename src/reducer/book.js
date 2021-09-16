@@ -1,3 +1,5 @@
+import { types } from "../actions/types"
+
 const bookState = {
     docs: null,
     getBooksAPICallSuccess: true,
@@ -7,10 +9,9 @@ const bookState = {
   };
   
   const bookStoreReducer = (state = bookState, action) => {
-    console.log(action)
     switch(action.type) {
       //cases
-      case 'SUCCESS_GET_BOOKS_CALL': {
+      case types.GET_BOOKS: {
         return {
           ...state,
           getBooksAPICallSuccess: true,
@@ -19,7 +20,7 @@ const bookState = {
         }
       }
 
-      case 'SUCCESS_DESCRIPTION_DATA_CALL':{
+      case types.GET_DESCRIPTION:{
         return{
           ...state,
           getDescriptionDataCall: true,
@@ -27,26 +28,26 @@ const bookState = {
         } 
       }
 
-      case 'SORT_BY_TITLE':{
-        console.log(state)
-        let obj = Object.keys(action.payload).sort((a,b)=>action.payload[a].edition_count>action.payload[b].edition_count?1:-1)
-        let finalData = obj.map(x=>action.payload[x])
+      case types.SORT_BY_TITLE:{
         return{
           ...state,
-          docs:[{...finalData}]
-        }
-        // break;
+          docs:[{...action.payload}]
+        }        
       }
 
-      // case 'SORT_BY_YEAR':{
-      //  console.log(action.payload)
-      // // break;
-      // }
+      case types.SORT_BY_YEAR:{
+        return{
+          ...state,
+          docs:[{...action.payload}]
+        }
+      }
   
-      // case 'SORT_BY_EDITION':{
-      //   console.log(action.payload)
-      // // break;
-      // }
+      case types.SORT_BY_EDITION:{
+        return{
+          ...state,
+          docs:[{...action.payload}]
+        }
+      }
   
       default:
         return state;

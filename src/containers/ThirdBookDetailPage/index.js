@@ -38,8 +38,6 @@ const ThirdBookDetailPage = (props) => {
   );
 };
 const mapStateToProps = state => {
-  console.log("STATE INSIDE THIRDPAGE");
-  console.log(state)
   return {
     // author: state.author,
     data: state.descriptionData[0]

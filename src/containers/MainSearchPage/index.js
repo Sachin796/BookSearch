@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from "react-router";
-
+import { types } from "../../actions/types"
 class MainSearchPage extends Component {
   constructor(props){
     super(props);
@@ -18,15 +18,11 @@ class MainSearchPage extends Component {
   };
 
   onFindButtonClick = async () => {
-    // TODO make API call to find book from title
-    // console.log(this.props);
-
     let formattedData = this.state.bookName.split(' ').join("+");
 
     const apiData = await fetch(`https://openlibrary.org/search.json?q=${formattedData}`)
       .then(response => response.json())
       .then(data => data);
-      console.log(apiData)
       const returnedData = await this.props.successAPICall(apiData);
     if(apiData.num_found === 0) {
       console.log("Equal")
@@ -53,9 +49,6 @@ class MainSearchPage extends Component {
 }
 
 const mapStateToProps = state => {
-
-    // console.log("STATE INSIDE MAPSTATE TO PROPS")
-    // console.log(state)
   return {
     author: state.author,
   };
@@ -63,7 +56,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    successAPICall: (data) => dispatch({ type: 'SUCCESS_GET_BOOKS_CALL', payload: data})
+    successAPICall: (data) => dispatch({ type: types.GET_BOOKS, payload: data})
   };
 };
 

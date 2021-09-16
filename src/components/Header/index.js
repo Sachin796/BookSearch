@@ -7,7 +7,7 @@ return(
 <>
     <div className="page3Main">
         <AppName />
-        <Searchandbutton />
+        {/* <Searchandbutton /> */}
     </div>
 </>
 )
