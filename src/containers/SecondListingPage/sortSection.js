@@ -27,11 +27,16 @@ function SortSection(props){
     }
 
     return(
-        <div>
-        <button type='button' className="" onClick = {sortByTitle}>Title</button>
-        <button type='button' className="" onClick = {sortByPublishYear}>Publish Year</button>
-        <button type='button' className="" onClick = {sortByEditionCount}>Editions</button>
+        <>
+        <div className="sortClass">
+        SORT BY
         </div>
+        <div>
+        <button type='button' className="filterButtons" onClick = {sortByTitle}>Title</button>
+        <button type='button' className="filterButtons" onClick = {sortByPublishYear}>Publish Year</button>
+        <button type='button' className="filterButtons" onClick = {sortByEditionCount}>Editions</button>
+        </div>
+        </>
     )
 }
 

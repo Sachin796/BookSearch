@@ -98,9 +98,10 @@ input[type='text']:focus {
 }
 
 .page3Div4{
-  background-color: rgb(10, 80, 150);
-  color: white;
+  /* background-color: rgb(10, 80, 150); */
+  color: black;
   padding: 1rem;
+  border: 1px solid black;
 }
 
 @media (min-width: 900px) {
@@ -114,13 +115,18 @@ input[type='text']:focus {
 .mainDivmainPage{
   background-image: url('./images/books.jpg');
   height: 43.5rem;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .mainPageSearchButton{
-  background-color: rgb(178, 255, 127);
-  padding: 10px;
-  border-radius: 10px;
-  color: rgb(0, 0, 0);
+  padding: 0.7rem;
+  margin: 1rem 0rem;
+  width: 10rem;
+  border-radius: 1rem;
+  color: crimson;
+  font-weight: bold;
+  background-color: white(61, 61, 219);
 }
 
 .mainPageSearchButton:hover {
@@ -152,6 +158,26 @@ input[type='text']:focus {
 
 }
 
+.filterButtons{
+  padding: 0.7rem;
+  margin: 1rem 2rem;
+  width: 10rem;
+  border-radius: 1rem;
+  color: crimson;
+  font-weight: bold;
+  background-color: #ffffff;
+}
+
+.sortClass{
+  padding: 0.7rem;
+  border: 0.5px solid black;
+  width: 63%;
+  margin: auto;
+  margin-top: 0.7rem;
+  background-color: #ffffff;
+  font-weight: bolder;
+}
+
 #bookmain{
   max-width: 100%;
   margin: 0 auto;
@@ -161,11 +187,10 @@ input[type='text']:focus {
   border-bottom: 1px solid black;
 }
 
-/* #bookcover{  }   */
+#bookcover{
+  padding-top: 30px;
+}  
 
-/* #bookdetails{
-
-} */
 
 @media (max-width: 700px) {
   #bookmain { display: inline-block; }
@@ -207,8 +232,8 @@ input[type='text']:focus {
 cursor: pointer;
 }
 
-.infoAuthor{
-
+/* Page 3 CSS */
+.page3Titles{
+  font-size: larger;
+  font-weight: bolder;
 }
-
-/* Page 4 CSS */

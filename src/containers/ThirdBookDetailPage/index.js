@@ -18,18 +18,19 @@ const ThirdBookDetailPage = (props) => {
       </div>
       <div className="page3Div4">
         <div id="bookTitle">{props.data.title}</div>
-        <p id="revision">Latest Revision - {props.data.revision}</p>
+        <p id="revision" className="page3Titles">Latest Revision </p>
+        <p>{props.data.revision !== undefined?props.data.revision:<span style={{color:"red"}}>NO DATA</span>}</p>
 
         <div id="description">
-        <p>DESCRIPTION</p>
-        <p id="descriptionSection">{props.data[0].description !== undefined?props.data[0].description.value:"No Data"}</p>
+        <p className="page3Titles">DESCRIPTION</p>
+        <p id="descriptionSection">{props.data[0].description !== undefined?<span style={{fontFamily:"serif"}}>{props.data[0].description.value}</span>:<span style={{color:"red"}}>NO DATA</span>}</p>
         </div>
 
         <div id="referenceLinks">
-          <p>REFERENCES</p>
+          <p className="page3Titles">REFERENCES</p>
           {props.data.links !== undefined?props.data.links.map(data=>{
             return <p>{data.title} - {data.url}</p>
-          }):"No Data"}
+          }):<span style={{color:"red"}}>NO DATA</span>}
         </div>
       </div>
     </div>

@@ -24,10 +24,10 @@ const BookListItem = (props) => {
           <img src={`${process.env.REACT_APP_COVERS_URL}/${props.cover_id}-M.jpg`} id={props.Key} name={props.cover_id} alt="Book Cover"/>
           </div>
           <div id="bookdetails">
-          <h4 className="infoTitle" id={props.Key} name={props.cover_id}>Title: {props.title}</h4>
-          <h4 className="infoAuthor" id={props.Key} name={props.cover_id}>Author: {props.author}</h4>
-          <h4 className="infoPbYear" id={props.Key} name={props.cover_id}>First Published Year: {props.pbyear}</h4>
-          <h4 className="infoEditions" id={props.Key} name={props.cover_id}>Number of Editions: {props.editionCount}</h4>
+          <h4 className="infoTitle" id={props.Key} name={props.cover_id}>Title: </h4><p>{props.title}</p>
+          <h4 className="infoAuthor" id={props.Key} name={props.cover_id}>Author: </h4><p>{props.author}</p>
+          <h4 className="infoPbYear" id={props.Key} name={props.cover_id}>First Published Year: </h4><p>{props.pbyear}</p>
+          <h4 className="infoEditions" id={props.Key} name={props.cover_id}>Number of Editions: </h4><p>{props.editionCount}</p>
           </div>
         </div>
       </span>
